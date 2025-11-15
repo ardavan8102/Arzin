@@ -10,17 +10,11 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.amberAccent,
         actions: [
-          const SizedBox(width: 12), // Space from Left
+          const SizedBox(width: 16), // Space from Left
 
-          Expanded(
-            child: Align(
-              alignment: AlignmentGeometry.centerLeft,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.menu),
-              ),
-            ),
-          ),
+          Image.asset('assets/img/icon-appbar.png'),
+
+          const SizedBox(width: 6),
 
           Align(
             alignment: AlignmentGeometry.centerRight,
@@ -34,32 +28,27 @@ class HomePage extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(width: 6),
+          Expanded(
+            child: Align(
+              alignment: AlignmentGeometry.centerLeft,
+              child: IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.menu),
+              ),
+            ),
+          ),
 
-          Image.asset('assets/img/icon-appbar.png'),
-
-          const SizedBox(width: 12), // Space from Right
+          const SizedBox(width: 16), // Space from Right
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           children: [
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-        
-                Text(
-                  'نرخ ارز آزاد چیست؟',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
 
-                SizedBox(width: 8),
-        
                 Container(
                   padding: EdgeInsets.all(4),
                   decoration: BoxDecoration(
@@ -69,6 +58,17 @@ class HomePage extends StatelessWidget {
                   child: Icon(
                     Icons.question_mark,
                     color: Colors.amberAccent,
+                  ),
+                ),
+
+                SizedBox(width: 8),
+        
+                Text(
+                  'نرخ ارز آزاد چیست؟',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
               ],
