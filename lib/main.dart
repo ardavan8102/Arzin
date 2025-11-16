@@ -1,4 +1,4 @@
-import 'package:arzin/Ui/home.dart';
+import 'package:arzin/Ui/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Dana',
       ),
-      home: const HomePage(),
+      home: const SplashScreen(),
     );
   }
 }

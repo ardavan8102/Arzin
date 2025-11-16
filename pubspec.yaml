@@ -30,6 +30,8 @@ flutter:
 
   assets:
     - assets/img/icon-appbar.png
+    - assets/img/splash.png
+    - assets/img/logo.png
 
   fonts:
     - family: Dana
