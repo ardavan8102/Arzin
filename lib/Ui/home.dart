@@ -1,3 +1,4 @@
+import 'package:arzin/components/appbar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,41 +7,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade900,
-      appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
-        actions: [
-          const SizedBox(width: 16), // Space from Left
-
-          Image.asset('assets/img/icon-appbar.png'),
-
-          const SizedBox(width: 6),
-
-          Align(
-            alignment: AlignmentGeometry.centerRight,
-            child: const Text(
-              'قیمت بروز نرخ ارز',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
-          ),
-
-          Expanded(
-            child: Align(
-              alignment: AlignmentGeometry.centerLeft,
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.menu),
-              ),
-            ),
-          ),
-
-          const SizedBox(width: 16), // Space from Right
-        ],
-      ),
+      backgroundColor: Colors.white,
+      appBar: AppBarArzin(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -66,7 +34,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   'نرخ ارز آزاد چیست؟',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                   ),
@@ -79,7 +47,7 @@ class HomePage extends StatelessWidget {
             Text(
               'نرخ ارزها در معاملات نقدی و رایج روازانه است معاملات نقدی معاملاتی هستند که خریدار و فروشنده به محض انجام معامله ارز و ریال را باهم تبادل میکنند',
               style: TextStyle(
-                color: Colors.white,
+                color: Colors.black.withValues(alpha: 0.5),
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
               ),

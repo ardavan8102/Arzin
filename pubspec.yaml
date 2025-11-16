@@ -29,9 +29,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/img/icon-appbar.png
     - assets/img/splash.png
     - assets/img/logo.png
+    - assets/img/logo-icon.png
 
   fonts:
     - family: Dana
