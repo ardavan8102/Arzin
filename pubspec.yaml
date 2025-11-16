@@ -14,8 +14,9 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
-
+  
   cupertino_icons: ^1.0.8
+  shamsi_date: ^1.1.1
 
 dev_dependencies:
   flutter_test:

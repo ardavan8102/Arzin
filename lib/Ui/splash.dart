@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:arzin/ui/home.dart';
+import 'package:arzin/page_handler.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     // Navigate to HOME
     Timer(Duration(seconds: 5), () {
       Navigator.of(context).push(MaterialPageRoute(
-        builder: (context) => const HomePage(),
+        builder: (context) => const MainScreen(),
       ));
     });
   }
