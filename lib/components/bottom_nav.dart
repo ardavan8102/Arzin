@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
@@ -13,10 +14,10 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final items = [
-      {'icon': Icons.home, 'label': 'صفحه اصلی'},
-      {'icon': Icons.attach_money, 'label': 'نرخ ارزها'},
-      {'icon': Icons.settings, 'label': 'تنظیمات'},
-      {'icon': Icons.info_outline, 'label': 'درباره ما'},
+      {'icon': CupertinoIcons.house_fill, 'label': 'صفحه اصلی'},
+      {'icon': CupertinoIcons.money_dollar, 'label': 'ارز آزاد'},
+      {'icon': CupertinoIcons.bitcoin, 'label': 'ارز دیجیتال'},
+      {'icon': CupertinoIcons.info, 'label': 'درباره ما'},
     ];
 
     return Container(

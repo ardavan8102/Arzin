@@ -24,6 +24,43 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Dana',
+        textTheme: TextTheme(
+          headlineMedium: TextStyle(
+            fontFamily: 'Dana',
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
+          ),
+
+          headlineLarge: TextStyle(
+            fontFamily: 'Dana',
+            fontSize: 20,
+            fontWeight: FontWeight.w700,
+            color: Colors.black,
+          ),
+
+          headlineSmall: TextStyle(
+            fontFamily: 'Dana',
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+            color: Colors.white,
+          ),
+
+          bodySmall: TextStyle(
+            fontFamily: 'Dana',
+            fontSize: 14,
+            fontWeight: FontWeight.w300,
+            color: Colors.black.withValues(alpha: 0.6),
+            height: 1.5,
+          ),
+
+          bodyMedium: TextStyle(
+            fontFamily: 'Dana',
+            fontSize: 16,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
       ),
       home: const SplashScreen(),
     );

@@ -41,7 +41,7 @@ class AppBarArzin extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
     
-        const SizedBox(width: 16), // Space from Right
+        const SizedBox(width: 4), // Space from Right
       ],
     );
   }

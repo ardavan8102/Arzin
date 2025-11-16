@@ -3,7 +3,7 @@ import 'package:arzin/components/appbar.dart';
 import 'package:arzin/components/bottom_nav.dart';
 import 'package:arzin/ui/aboutus.dart';
 import 'package:arzin/ui/currencies.dart';
-import 'package:arzin/ui/settings.dart';
+import 'package:arzin/ui/crypto.dart';
 import 'package:flutter/material.dart';
 
 class MainScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class _MainScreenState extends State<MainScreen> {
   final pages = [
     const HomePage(),
     const CurrenciesPage(),
-    const SettingsPage(),
+    const CryptoPage(),
     const AboutUsPage(),
   ];
 
