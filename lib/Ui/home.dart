@@ -35,9 +35,8 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 110,
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 14),
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 8),
               decoration: BoxDecoration(
                 color: Color(0xffFEBA17).withValues(alpha: 0.15),
                 border: Border.all(
@@ -48,54 +47,43 @@ class HomePage extends StatelessWidget {
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'سلام اردوان جون',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.black.withValues(alpha: 0.4),
-                    ),
-                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'امروز',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                      ),
                   
-                  SizedBox(height: 8),
-
-                  Expanded(
-                    child: Row(
-                      children: [
-                        const Text(
-                          'امروز',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
+                      SizedBox(width: 5),
+                  
+                      Text(
+                        getPersianDate()[0],
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Color(0xffCB9512),
                         ),
-
-                        SizedBox(width: 5),
-                    
-                        Text(
-                          getPersianDate()[0],
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xffCB9512),
-                          ),
+                      ),
+                  
+                      SizedBox(width: 5),
+                  
+                      Text(
+                        getPersianDate()[1],
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
-
-                        SizedBox(width: 5),
-                    
-                        Text(
-                          getPersianDate()[1],
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
