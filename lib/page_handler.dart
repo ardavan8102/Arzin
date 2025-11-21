@@ -18,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
 
   final pages = [
     const HomePage(),
-    const CurrenciesPage(),
+    CurrenciesPage(),
     const CryptoPage(),
     const AboutUsPage(),
   ];

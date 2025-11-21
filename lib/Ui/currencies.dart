@@ -1,16 +1,80 @@
+import 'package:arzin/models/currency.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert' as convert;
 
-class CurrenciesPage extends StatelessWidget {
+class CurrenciesPage extends StatefulWidget {
   const CurrenciesPage({super.key});
 
   @override
+  State<CurrenciesPage> createState() => _CurrenciesPageState();
+}
+
+class _CurrenciesPageState extends State<CurrenciesPage> {
+  List<Currency> currencies = [];
+
+  final String apiKey = dotenv.env['API_KEY']!;
+
+  final String apiUrl = dotenv.env['BASE_URL']!;
+
+  String get apiMain => '$apiUrl?key=$apiKey';
+
+  dynamic getResponse(){
+
+    var url = apiMain;
+    http.get(
+      Uri.parse(url),
+    ).then(
+      (value){
+        
+        if (currencies.isEmpty) {
+          if (value.statusCode == 200) { // If request is ok :
+          
+            final jsonMap = convert.jsonDecode(value.body) as Map<String, dynamic> ;
+            final currencyList = jsonMap['currency'] as List;
+
+            if (currencyList.isNotEmpty) { // if currency list have objects :
+              
+              for (var item in currencyList) {
+
+                setState(() {
+                  currencies.add(
+                    Currency(
+                      nameEn: item['name_en'] ?? '',
+                      nameFa: item['name'] ?? '',
+                      date: item['date'] ?? '',
+                      time: item['time'] ?? '',
+                      price: item['price']?.toString() ?? '',
+                      priceUnit: item['unit'] ?? '',
+                      changePercent: item['change_percent']?.toString() ?? '',
+                    ),
+                  );
+                });
+              }
+
+            }
+
+          }
+        }
+
+      }
+    );
+
+  }
+
+  @override
   Widget build(BuildContext context) {
+
+    getResponse();
+
     return SafeArea(
       child: Padding(
         padding: EdgeInsetsGeometry.all(16),
         child: Column(
           children: [
+            // Icon Title
             Row(
               children: [
                 Container(
@@ -36,13 +100,15 @@ class CurrenciesPage extends StatelessWidget {
 
             SizedBox(height: 10),
 
+            // TextArea
             Text(
               'لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و تکنولوژی مورد نیاز',
               style: Theme.of(context).textTheme.bodySmall,
             ),
 
             SizedBox(height: 20),
-
+            
+            // Table Header
             Container(
               padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
@@ -78,11 +144,14 @@ class CurrenciesPage extends StatelessWidget {
               height: 280,
               child: ListView.builder(
                 physics: BouncingScrollPhysics(),
-                itemCount: 16,
+                itemCount: currencies.length,
                 itemBuilder: (BuildContext context, int position) {
                   return Padding(
                     padding: const EdgeInsets.fromLTRB(0,16,0,0),
-                    child: CurrencyListItem(),
+                    child: CurrencyListItem(
+                      position: position,
+                      list: currencies,
+                    ),
                   );
                 },
               ),
@@ -173,12 +242,18 @@ void _showSnackBar(BuildContext context, String msg) {
 
 // Item for Price listview
 class CurrencyListItem extends StatelessWidget {
+  final int position;
+  final List<Currency> list;
+
   const CurrencyListItem({
     super.key,
+    required this.position,
+    required this.list,
   });
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       padding: EdgeInsets.fromLTRB(10,12,10,12),
       width: double.infinity,
@@ -191,17 +266,17 @@ class CurrencyListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'دلار',
+            list[position].nameFa!,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '109.856 تومان',
+            '${list[position].price} ${list[position].priceUnit} ',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '6.2%',
+            '${list[position].changePercent!}%',
             style: TextStyle(
-              color: Colors.green,
+              color: list[position].changePercent!.startsWith('-') ? Colors.red : Colors.green,
               fontWeight: FontWeight.w700,
             ),
           ),
