@@ -110,12 +110,13 @@ class _CurrenciesPageState extends State<CurrenciesPage> {
             // List
             SizedBox(
               width: double.infinity,
-              height: 400,
+              height: MediaQuery.of(context).size.height / 2,
               child: listFutureBuilder(context),
             ),
 
             // Button Box
-            Expanded(
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 10,
               child: Container(
                 padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 24),
@@ -140,6 +141,7 @@ class _CurrenciesPageState extends State<CurrenciesPage> {
 
                       }, 
                       style: ButtonStyle(
+                        padding: WidgetStateProperty.all(EdgeInsets.all(16)),
                         backgroundColor: WidgetStateProperty.all(Color(0xffFEBA17)),
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
