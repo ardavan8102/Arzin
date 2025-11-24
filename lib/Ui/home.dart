@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 import 'package:shamsi_date/shamsi_date.dart';
+import 'dart:ui' as dart_ui;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -165,6 +166,29 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
+          
+            SizedBox(height: 24),
+
+            // Slider Boxes
+            currencies.isEmpty
+            ? const CircularProgressIndicator()
+            : SizedBox(
+                height: MediaQuery.of(context).size.height / 6,
+                width: double.infinity,
+                child: PageView.builder(
+                  controller: PageController(viewportFraction: 1),
+                  itemCount: currencies.length,
+                  itemBuilder: (context, index) {
+                    final reveresedList = currencies.reversed.toList();
+                    final currency = reveresedList[index];
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 400),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      child: buildCurrencySlide(currency),
+                    );
+                  },
+                ),
+              ),
           ],
         ),
       ),
@@ -261,4 +285,90 @@ class _HomePageState extends State<HomePage> {
             ),
           );
   }
+
+  // Slider
+  Widget buildCurrencySlide(Currency currency) {
+    return Directionality(
+      textDirection: dart_ui.TextDirection.rtl,
+      child: Container(
+        width: double.infinity,
+        decoration: BoxDecoration(
+          color: Colors.amber.withValues(alpha: 0.2),
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(color: Colors.amber.withValues(alpha: 0.5)),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      currency.nameFa,
+                      style: const TextStyle(
+                        color: Colors.amber,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      currency.nameEn.toUpperCase(),
+                      style: TextStyle(
+                        color: Colors.grey.withValues(alpha: 0.6),
+                        fontSize: 13,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      currency.price.isNotEmpty
+                          ? '${NumberFormat('#,###').format(int.parse(currency.price))} ${currency.priceUnit}'
+                          : '...',
+                      style: const TextStyle(
+                        color: Colors.amber,
+                        fontSize: 18,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Container(
+                      padding: EdgeInsets.all(6),
+                      decoration: BoxDecoration(
+                        color: double.tryParse(currency.changePercent) != null &&
+                                  double.parse(currency.changePercent) > 0
+                              ? Colors.greenAccent
+                              : Colors.redAccent,
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                      child: Text(
+                        "${currency.changePercent}%",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+
 }
