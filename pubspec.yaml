@@ -31,7 +31,7 @@ flutter:
     - assets/img/splash.png
     - assets/img/logo.png
     - assets/img/logo-icon.png
-    - assets/.env
+    - .env
 
   fonts:
     - family: Dana

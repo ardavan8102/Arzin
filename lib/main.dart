@@ -1,13 +1,20 @@
 import 'package:arzin/ui/splash.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  dotenv.load(fileName: 'assets/.env').then((_) {
-    runApp(MyApp());
-  });
+
+  await SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: [SystemUiOverlay.top],
+  );
+
+  await dotenv.load(fileName: '.env');
+
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
