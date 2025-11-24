@@ -3,18 +3,33 @@
 I'm a Flutter Programmer with Web & Game Development knowledge. my main idea is to develope applications and games for mobiles but sometimes web field pulls me too :)
 
 
-# Arzin | محاسبه و بررسی نرخ ارز
+# 🪙 Arzin | محاسبه و بررسی نرخ ارز
 
 An Application for tracking currency prices like USD,EUR,GBP & ...
 >also includes crypto currencies like Tether,Tron, Bitcoin & ...
 
 
-## Programmer
+## 📸 Ui Screenshots
+
+>Splash Screen
+![Splash](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/splash.jpg?raw=true)
+
+>Home Screen
+![Home](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/home.jpg?raw=true)
+
+>Currency
+![Currency](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/currency.jpg?raw=true)
+
+>Crypto Currency
+![CryptoCurrency](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/crypto.jpg?raw=true)
+
+
+## 🧑‍💻 Programmer
 
 - [Ardavan Eskandari](https://www.github.com/ardavan8102)
 
 
-## Know More Details
+## 🔰 Know More Details
 
 Technologies We Used:
 
@@ -25,7 +40,7 @@ Technologies We Used:
 ![Platform](https://img.shields.io/badge/Platform-Android,IOS-green)
 
 
-## App Features
+## 🪄 App Features
 
 - Live Stats & Prices
 - Modular Structure
@@ -33,7 +48,7 @@ Technologies We Used:
 - Aasynchronous Responses
 
 
-## Run Locally
+## 🖥️ Run Locally
 
 Clone the project
 
@@ -60,17 +75,17 @@ Run The application
 ```
 
 
-## Support
+## 📧 Support
 
 For support, email ardavaneskandari007@gmail.com or join our [Telegram channel](https://t.me/ardavandesign).
 
 
-## Feedback
+## 💌 Feedback
 
 If you have any feedback, please reach out to us at ardavaneskandari007@gmail.com
 
 
-## License
+## 🪪 License
 
 [MIT License](https://choosealicense.com/licenses/mit/)
 
