@@ -41,6 +41,7 @@ class _CryptoPageState extends State<CryptoPage> {
             setState(() {
               currencies.add(
                 Currency(
+                  symbol: item['symbol'] ?? '',
                   nameEn: item['name_en'] ?? '',
                   nameFa: item['name'] ?? '',
                   date: item['date'] ?? '',
@@ -110,14 +111,14 @@ class _CryptoPageState extends State<CryptoPage> {
             // List
             SizedBox(
               width: double.infinity,
-              height: 400,
+              height: MediaQuery.of(context).size.height / 2,
               child: listFutureBuilder(context),
             ),
 
             // Button Box
-            Expanded(
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 7,
               child: Container(
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 24),
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -125,8 +126,9 @@ class _CryptoPageState extends State<CryptoPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  spacing: 24,
                   children: [
                     // Update Button
                     TextButton.icon(
@@ -140,6 +142,7 @@ class _CryptoPageState extends State<CryptoPage> {
 
                       }, 
                       style: ButtonStyle(
+                        padding: WidgetStateProperty.all(EdgeInsets.all(16)),
                         backgroundColor: WidgetStateProperty.all(Color(0xffFEBA17)),
                         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
@@ -292,17 +295,17 @@ class CurrencyListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            list[position].nameFa!,
+            list[position].nameFa,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '${NumberFormat('#,###').format(double.parse(list[position].price!))} ${list[position].priceUnit}',
+            '${NumberFormat('#,###').format(double.parse(list[position].price))} ${list[position].priceUnit}',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '${list[position].changePercent!}%',
+            '${list[position].changePercent}%',
             style: TextStyle(
-              color: list[position].changePercent!.startsWith('-') ? Colors.red : Colors.green,
+              color: list[position].changePercent.startsWith('-') ? Colors.red : Colors.green,
               fontWeight: FontWeight.w700,
             ),
           ),

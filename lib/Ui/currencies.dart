@@ -41,6 +41,7 @@ class _CurrenciesPageState extends State<CurrenciesPage> {
             setState(() {
               currencies.add(
                 Currency(
+                  symbol: item['symbol'] ?? '',
                   nameEn: item['name_en'] ?? '',
                   nameFa: item['name'] ?? '',
                   date: item['date'] ?? '',
@@ -116,9 +117,8 @@ class _CurrenciesPageState extends State<CurrenciesPage> {
 
             // Button Box
             SizedBox(
-              height: MediaQuery.of(context).size.height / 10,
+              height: MediaQuery.of(context).size.height / 7,
               child: Container(
-                padding: EdgeInsets.all(10),
                 margin: EdgeInsets.only(top: 24),
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -126,8 +126,9 @@ class _CurrenciesPageState extends State<CurrenciesPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
+                  spacing: 24,
                   children: [
                     // Update Button
                     TextButton.icon(
@@ -294,17 +295,17 @@ class CurrencyListItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            list[position].nameFa!,
+            list[position].nameFa,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '${NumberFormat('#,###').format(int.parse(list[position].price!))} ${list[position].priceUnit}',
+            '${NumberFormat('#,###').format(int.parse(list[position].price))} ${list[position].priceUnit}',
             style: Theme.of(context).textTheme.bodyMedium,
           ),
           Text(
-            '${list[position].changePercent!}%',
+            '${list[position].changePercent}%',
             style: TextStyle(
-              color: list[position].changePercent!.startsWith('-') ? Colors.red : Colors.green,
+              color: list[position].changePercent.startsWith('-') ? Colors.red : Colors.green,
               fontWeight: FontWeight.w700,
             ),
           ),
