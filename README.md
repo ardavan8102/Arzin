@@ -50,6 +50,10 @@ Technologies We Used:
 
 ## 🖥️ Run Locally
 
+```
+Note: Application is based on Brsapi and you should create a .env file in the main root of project, which contains a BASE_URL and API_KEY.
+```
+
 Clone the project
 
 ```bash
