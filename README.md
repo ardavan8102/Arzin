@@ -11,17 +11,23 @@ An Application for tracking currency prices like USD,EUR,GBP & ...
 
 ## 📸 Ui Screenshots
 
->Splash Screen
-![Splash](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/splash.jpg?raw=true)
-
->Home Screen
-![Home](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/home.jpg?raw=true)
-
->Currency
-![Currency](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/currency.jpg?raw=true)
-
->Crypto Currency
-![CryptoCurrency](https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/crypto.jpg?raw=true)
+<details>
+  <summary>Tap To See</summary>
+  <ul>
+    <li>
+      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/splash.jpg?raw=true" width="600" height="1000" />
+    </li>
+    <li>
+      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/home.jpg?raw=true" width="600" height="1000" />
+    </li>
+    <li>
+      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/currency.jpg?raw=true" width="600" height="1000" />
+    </li>
+    <li>
+      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/crypto.jpg?raw=true" width="600" height="1000" />
+    </li>
+  </ul>
+</details>
 
 
 ## 🧑‍💻 Programmer
