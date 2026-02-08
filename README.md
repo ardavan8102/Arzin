@@ -1,4 +1,3 @@
-
 ## 🚀 About Me
 I'm a Flutter Programmer with Web & Game Development knowledge. my main idea is to develope applications and games for mobiles but sometimes web field pulls me too :)
 
@@ -11,28 +10,15 @@ An Application for tracking currency prices like USD,EUR,GBP & ...
 
 ## 📸 Ui Screenshots
 
-<details>
-  <summary>Tap To See</summary>
-  <ul>
-    <li>
-      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/splash.jpg?raw=true" width="600" height="1000" />
-    </li>
-    <li>
-      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/home.jpg?raw=true" width="600" height="1000" />
-    </li>
-    <li>
-      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/currency.jpg?raw=true" width="600" height="1000" />
-    </li>
-    <li>
-      <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/crypto.jpg?raw=true" width="600" height="1000" />
-    </li>
-  </ul>
-</details>
+## 📸 Screenshots
 
+<p align="left">
 
-## 🧑‍💻 Programmer
-
-- [Ardavan Eskandari](https://www.github.com/ardavan8102)
+  <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/splash.jpg?raw=true" width="280" loading="lazy" />
+  <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/home.jpg?raw=true" width="280" loading="lazy" />
+  <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/currency.jpg?raw=true" width="280" loading="lazy" />
+  <img src="https://github.com/ardavan8102/Arzin/blob/master/assets/screenshots/crypto.jpg?raw=true" width="280" loading="lazy" />
+</p>
 
 
 ## 🔰 Know More Details
